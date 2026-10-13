@@ -1,0 +1,4 @@
+com.policynepal.autocare.comment.controller.CommentController
+com.policynepal.autocare.system.controller.SystemController
+com.policynepal.autocare.user.controller.UserController
+com.policynepal.autocare.vehicle.controller.VehicleController

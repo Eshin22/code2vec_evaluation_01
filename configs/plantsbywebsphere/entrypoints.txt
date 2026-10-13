@@ -1,0 +1,5 @@
+com.ibm.websphere.samples.pbw.war.AccountServlet
+com.ibm.websphere.samples.pbw.war.AdminServlet
+com.ibm.websphere.samples.pbw.war.ImageServlet
+com.ibm.websphere.samples.pbw.war.MailAction
+com.ibm.websphere.samples.pbw.war.Populate

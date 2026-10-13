@@ -1,0 +1,6 @@
+com.rokin.baylorboard.controller.AwardController
+com.rokin.baylorboard.controller.EventController
+com.rokin.baylorboard.controller.GreetingController
+com.rokin.baylorboard.controller.TweetController
+com.rokin.baylorboard.controller.UserController
+com.rokin.baylorboard.controller.WhitelistUserController

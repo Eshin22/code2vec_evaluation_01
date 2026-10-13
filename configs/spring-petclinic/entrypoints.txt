@@ -1,0 +1,4 @@
+org.springframework.samples.petclinic.web.OwnerController
+org.springframework.samples.petclinic.web.PetController
+org.springframework.samples.petclinic.web.VisitController
+org.springframework.samples.petclinic.web.VetController

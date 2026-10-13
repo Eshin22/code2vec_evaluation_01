@@ -1,0 +1,7 @@
+com.upachar.web.data.controller.DataController
+com.upachar.web.drug.controller.CategoryController
+com.upachar.web.drug.controller.DosageFormController
+com.upachar.web.drug.controller.DrugController
+com.upachar.web.drug.controller.SubCategoryController
+com.upachar.web.order.controller.OrderController
+com.upachar.web.user.controller.UserController

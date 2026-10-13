@@ -1,0 +1,5 @@
+com.ibm.websphere.samples.daytrader.TradeAction
+com.ibm.websphere.samples.daytrader.web.TradeAppServlet
+com.ibm.websphere.samples.daytrader.web.TradeConfigServlet
+com.ibm.websphere.samples.daytrader.web.TradeScenarioServlet
+com.ibm.websphere.samples.daytrader.web.TestServlet
