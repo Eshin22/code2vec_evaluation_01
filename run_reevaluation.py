@@ -91,6 +91,7 @@ def run_pipeline():
             print(f"  -> Step 2: Code2Vec Adapter cached.")
             with open(mapping_path, "r", encoding="utf-8") as mf:
                 mapping = json.load(mf)
+            mapping["idx_to_class"] = {int(k): v for k, v in mapping["idx_to_class"].items()}
             N = mapping["N"]
         else:
             print(f"  -> Step 2: Running Code2Vec Adapter (Mean Method Aggregation)...")
@@ -117,15 +118,12 @@ def run_pipeline():
         print(f"  -> Step 3: Executing Code2Vec clustering across {RUNS_COUNT} random seeds...")
         run_results = []
         for r_idx, seed in enumerate(SEEDS):
+            membership = run_code2vec_clustering(vec_path, target_k=k, seed=seed)
+            partition = {mapping["idx_to_class"][i]: int(membership[i]) for i in range(N)}
+
             part_path = os.path.join(output_ds_dir, f"run_{r_idx + 1}.json")
-            if os.path.exists(part_path):
-                with open(part_path, "r", encoding="utf-8") as pf:
-                    partition = json.load(pf)
-            else:
-                membership = run_code2vec_clustering(vec_path, target_k=k, seed=seed)
-                partition = {mapping["idx_to_class"][i]: int(membership[i]) for i in range(N)}
-                with open(part_path, "w", encoding="utf-8") as pf:
-                    json.dump(partition, pf, indent=2)
+            with open(part_path, "w", encoding="utf-8") as pf:
+                json.dump(partition, pf, indent=2)
 
             metrics_val = compute_all(partition, edges, calls=calls, class_usecases=class_usecases)
             metrics_val["run"] = r_idx + 1
